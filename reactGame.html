@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>How fast can you click</title>
+
+
+<style type="text/css">
+	#box{
+		height: 200px;
+		width: 200px;
+		background-color: #3c6eb4;
+		display: none;
+	}
+</style>
+
+</head>
+<body>
+
+
+<div id="box"></div>
+
+
+
+<script type="text/javascript">
+
+
+
+function makebox(){
+	var x = Math.random()
+	x = 6000 * x;
+	setTimeout(function() {
+			document.getElementById("box").style.display="block";
+		}, x);
+}
+
+document.getElementById("box").onclick=function(){
+			document.getElementById("box").style.display="none";
+		 	makebox();
+	}	
+	
+	makebox();	
+
+	
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
