@@ -16,26 +16,31 @@
 </head>
 <body>
 
-
+<p>Your time is <span id="time"></span></p>
 <div id="box"></div>
 
 
 
 <script type="text/javascript">
 
-
+var clickedTime; var createdTime; var reactionTime;
 
 function makebox(){
 	var x = Math.random()
 	x = 6000 * x;
 	setTimeout(function() {
 			document.getElementById("box").style.display="block";
+			createdTime=Date.now();
 		}, x);
+	
 }
 
 document.getElementById("box").onclick=function(){
 			document.getElementById("box").style.display="none";
 		 	makebox();
+		 	clickedTime=Date.now();
+		 	reactionTime = (clickedTime - createdTime)/1000	;
+		 	document.getElementById("time").innerHTML=reactionTime;
 	}	
 	
 	makebox();	
